@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>New Web Project</title>
+        <link rel="stylesheet" type="text/css" href="/css/compost.css">
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.4.4.min.js"></script> 
+<!--
+        <script type="text/javascript" src="http://cyan.chrisdew.com/underscore.js"></script> 
+        <script type="text/javascript" src="http://cyan.chrisdew.com/json2.js"></script> 
+        <script type="text/javascript" src="http://cyan.chrisdew.com/backbone.js"></script> 
+        <script type="text/javascript" src="http://cyan.chrisdew.com/socket.io/socket.io.js"></script> 
+-->
+        <!--[if IE]><script type="text/javascript" src="excanvas.compiled.js"></script><![endif]-->
+        <script type="text/javascript" src="/js/client.js"></script>
+        
+        <script type="text/javascript">
+            $(document).ready(function() {
+                window.client = new Client();
+                window.client.start();
+            });
+        </script>
+    </head>
+    <body style="position: relative;">
+        <!--
+        <script type="text/javascript"> 
+            alert("start");
+            var socket = new io.Socket("cyan.chrisdew.com"); 
+            socket.on('connect', function(){ 
+                alert("connect");
+                socket.send('hi!');     
+            }) 
+            socket.on('message', function(data){ alert("message: " + data); }) 
+            socket.on('disconnect', function(){ alert("disconnect"); }) 
+            socket.connect();
+            socket.send("foo");
+        </script>
+        --> 
+        <h1>New Web Project Page</h1>
+        <div style="opacity: 0.01;">
+            <canvas id="composting_canvas" width="200" height="340"></canvas>
+            <img id="target" src="">
+            <img id="sk" src="/images/half-kaizer/m/skin/01.png">
+            <img id="sh" src="/images/half-kaizer/m/shoes/01.png"> 
+            <img id="pa" src="/images/half-kaizer/m/pants/01.png"> 
+            <img id="to" src="/images/half-kaizer/m/top/01.png">
+            <img id="ha" src="/images/half-kaizer/m/hair/01.png">
+        </div>
+    </body>
+</html>
