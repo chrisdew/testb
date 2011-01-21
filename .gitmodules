@@ -1,0 +1,3 @@
+[submodule "www/js/libs/gameQuery"]
+	path = www/js/libs/gameQuery
+	url = git@github.com:chrisdew/gameQuery.git
