@@ -19,3 +19,7 @@ business model
 * purchase and co-locate our own servers sufficient to meet priority 99.999% of time
 
 
+
+NOW:
+
+fix params problem

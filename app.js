@@ -2,6 +2,8 @@ var http = require('http');
 var io = require('socket.io');
 var pb = require('paperboy');
 var path = require('path');
+var rpc = require('./lib/json-rpc');
+var av = require('./lib/avatar');
 
 var PORT = 8888;
 var WEBROOT = path.join(path.dirname(__filename), 'www');
@@ -43,37 +45,8 @@ server.listen(PORT, HOST);
 
 var socket = io.listen(server);
 
-var state = 
-{ blog: 
-  { l: 
-    [ { date: "2011-01-19"
-      , content: "blah"
-      } 
-    , { date: "2011-01-19"
-      , content: "blah"
-      }
-    ]
-  }
-, contact:
-  { phone: "01234 567890"
-  , email: "cmsdew@gmail.com"
-  }
-}
+process.store = {};
+process.trans = {};
 
-var num_clients = 0;
-socket.on('connection',function(client){
-  num_clients++;
-  var start = new Date().getTime();
-  client.send(1);
-  console.log(client);
-  client.on('message',function(message){ 
-	  setTimeout(function() {
-		  client.send(num_clients);
-	  }, 1000);
-	  console.log( (new Date()).getTime() - start ); 
-	  start = new Date().getTime();
-  });
-  client.on('disconnect',function(){
-	num_clients--;
-  }); 	
-});
+var jsonRPC = new rpc.JsonRpc(socket);
+jsonRPC.addMethod('ping', function() {return 'pong';});
