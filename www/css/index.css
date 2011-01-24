@@ -1,96 +1,53 @@
-body {
-	background: #ccc;
-	color: #444;
+#playground {
+    background: #444;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
 }
-#header, #footer {
-	background-image: url(/images/dappled.jpg);
+#debug_background {
+	color: #fffl
+	background: #fff;
+	
 }
-
-#header {
-    font-family: 'Ubuntu', serif;
-    font-size: 36px;
-    color: #aaf;
+#debug {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+}
+#credits {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 300px;
+}
+.bubble {
     padding: 10px 20px;
-    
 }
-#nav {
-    width: 200px;
-    float: left;
-    font-family: 'Ubuntu', serif;
-    font-size: 18px;
+.bubble h1 {
+    margin-top: 5px;
+    margin-bottom: 10px;
 }
-#wrap {
-	position: relative;
-	background-image: url(/images/dappled-nav.jpg);
-	background-repeat: repeat-y;
+.bubble p {
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
-#content {
-	float: left;
+.bubble a {
+	color: #aaf;
+	text-decoration: none;
 }
-#nav {
-}
-#nav li {
-	display: block;
-	float: right;
-}
-#nav a {
-	display: block;
-    width: 120px;
-    padding: 10px 20px;
-    border-bottom: 1px solid #777;
-    text-align: right;
-    
-    color: #aaf;
-}
-#nav li:first-child > a {
-    border-top: 1px solid #777;
-}
-#nav a:hover {
+.back {
 	color: #fff;
-}
-/*
-#nav a:hover {
 	background: #fff;
-    border-bottom: 1px solid #fff;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    opacity: 0.3;
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+    filter: alpha(opacity=30);
 }
-#nav li:first-child > a:hover {
-    border-top: 1px solid #fff;
-}
-*/
-a {
-    text-decoration: none;
-}
-
-#content {
-	padding: 10px;
-}
-
-article {
-	padding: 10px 20px;
-	background: #fff;
-	-moz-box-shadow: 5px 5px 5px #ccc;
-    -webkit-box-shadow: 5px 5px 5px #ccc;
-    box-shadow: 5px 5px 5px #ccc;
-    margin-bottom: 10px;
-    width: 400px;
-}
-article h1 {
-    font-family: 'Ubuntu', serif;
-    font-size: 18px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-article p {
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
-#footer {
-    font-family: 'Ubuntu', serif;
-    font-size: 18px;
-    color: #aaf;
-    padding: 15px 20px;
-}
-#footer p {
-	float: right;
+.fore {
+    position: absolute;
+    top: 0px;
+	color: #fff;
 }

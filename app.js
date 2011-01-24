@@ -3,7 +3,6 @@ var io = require('socket.io');
 var pb = require('paperboy');
 var path = require('path');
 var rpc = require('./lib/json-rpc');
-var av = require('./lib/avatar');
 
 var PORT = 8888;
 var WEBROOT = path.join(path.dirname(__filename), 'www');
