@@ -39,27 +39,8 @@
   <script src="/js/libs/modernizr-1.6.min.js"></script>
   <script src="/socket.io/socket.io.js"></script>
   <script src="/js/mylibs/json-rpc-client.js"></script>
-  <script>
-    var socket = new io.Socket();
-    socket.connect();
-    var jsonRpc = new JsonRpc(socket, function() {
-        jsonRpc.rpc('ping', [], function(err, result) {
-            console.log("ping response", err, result);
-        });
-    });
-    /*
-    socket.on('connect', function(){ 
-        console.log("connect", arguments); 
-        socket.send(JSON.stringify({id: 0, method: 'ping', params: []}));
-    });
-    socket.on('message', function(message){ 
-        console.log("message", message);
-    });
-    socket.on('disconnect', function(){ 
-        console.log("disconnect", arguments); 
-    });
-    */
-  </script>
+  <script src="/js/mylibs/index.js"></script>
+
 
 </head>
 
@@ -69,17 +50,15 @@
     <div class="bubble back">
       <h1>Untitled MMORPG</h1>
       <p>
-        This is an alpha demo of something for which I would like to obtain
-        funding. 
-      </p>
-      <p>
-        I'm open to both Angel investors and community funding.  
-        Contact <a href="mailto:cmsdew+untitled@gmail.com">Chris Dew</a> for more information. 
+        This is an alpha demo of a MMORPG for which I would like to obtain
+        funding.  Contact 
+        <a href="mailto:cmsdew+untitled@gmail.com">Chris Dew</a> for more 
+        information. 
       </p>
       <p>
         Thanks to:
         <a href="http://www.nodejs.org">NodeJS</a>,
-        <a href="/legal/PLEASE_CREDIT_APPROPRIATELY.txt">ShowKaiser/HKCP (defunct?)</a>,
+        <a href="/credits/PLEASE_CREDIT_APPROPRIATELY.txt">ShowKaiser/HKCP (defunct?)</a>,
         <a href="http://gamequery.onaluf.org/">gameQuery</a>,
         <a href="http://socket.io/">Socket.IO</a>,
         <a href="https://github.com/felixge/node-paperboy/">paperboy</a>,
@@ -91,12 +70,10 @@
     <div class="bubble fore">
       <h1>Untitled MMORPG</h1>
       <p>
-        This is an alpha demo of something for which I would like to obtain
-        funding. 
-      </p>
-      <p>
-        I'm open to both Angel investors and community funding.  
-        Contact <a href="mailto:cmsdew+untitled@gmail.com">Chris Dew</a> for more information. 
+        This is an alpha demo of a MMORPG for which I would like to obtain
+        funding.  Contact 
+        <a href="mailto:cmsdew+untitled@gmail.com">Chris Dew</a> for more 
+        information. 
       </p>
       <p>
         Thanks to:

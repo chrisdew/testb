@@ -1,0 +1,85 @@
+
+
+***********************************************************
+*                                                         *
+*         THE HALF-KAIZER CONSTRUCTION PROJECT            *
+*                                                         *
+***********************************************************
+
+Hi! Welcome to the HKCP Main Root. Here, you'll find all sorts
+of files that can help you build HK's.
+
+          Please read the following thoroughly.
+    Direct all questions to venetia@pixelcocktail.com,
+           or via PM to Venetia at RMXP.org.
+
+==============================================================
+==============================================================
+==============================================================
+
+::::::::::::::::::::::::
+:: THE FILE DIRECTORY ::
+::::::::::::::::::::::::
+
+Folders are sorted by type/gender, followed by age/body type, 
+followed by skintone.
+
+For example: 
+/HKCP/Clothes-Female/Teen/Tan/
+
+or
+
+/HKCP/Hair-Male/Heavy/Dark/
+
+------------------------------------------
+
+Filenames are generally as follows:
+
+GENDER-TYPE-##-COLOR-SKINTONE-ARTIST.png
+
+
+For example:
+F-Hair-01-Auburn-Pale-Venetia.png
+
+or
+
+F-Dress-01-Purple-Pale-Venetia.png
+
+------------------------------------------
+
+The roots are always Pale or Adult for ease of navigation.
+
+==============================================================
+==============================================================
+==============================================================
+
+::::::::::::::::::::
+:: CREDITING WORK ::
+::::::::::::::::::::
+
+If you use anything in the HKCP, it is expected that you
+credit the artist(s) that made your resources. Repercussions
+can result for lack of credit.
+
+>>> ALWAYS credit ShowKaizer for any HK you use! <<<
+     Regardless if his name is in the filepath!
+
+Otherwise, credit the Artist in the filename of the piece(s)
+you use. They'll always be the last word in the filepath before
+the extension.
+
+For example:
+If you use : M-Hair-02-Blonde-Pale-CeruleanSkye.png
+You must credit Cerulean Skye.
+
+==============================================================
+==============================================================
+==============================================================
+
+SPECIAL THANKS TO:
+
+Venetia
+ShowKaizer
+RMXP.ORG
+
+And you!
