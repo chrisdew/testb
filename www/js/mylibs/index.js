@@ -11,9 +11,14 @@ $(document).ready(function() {
     socket.connect();
     socket.on('connect', function() {
     	var jsonRpc = new JsonRpc(socket, window.CLIENT);
-    	jsonRpc.addMethod("foo", function() {
-    		console.log("foo executed");
-    		return "bar";
+    	jsonRpc.addMethod("ping", function(error, result) {
+    		console.log("ping invoked");
+    		return "pong";
+    	});
+    	
+    	jsonRpc.addNotificationHandler("latency", function(latency) {
+    		console.log("handling " + latency + "ms");
+    		$('#debug span.latency').text(latency);
     	});
     	
     	console.log("sending ping");
