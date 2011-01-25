@@ -9,6 +9,7 @@ var WEBROOT = path.join(path.dirname(__filename), 'www');
 var HOST = "0.0.0.0";
 
 function log(statCode, url, ip, err) {
+	return;
 	  var logStr = statCode + ' - ' + url + ' - ' + ip;
 	  if (err)
 	    logStr += ' - ' + err;
@@ -47,5 +48,5 @@ var socket = io.listen(server);
 process.store = {};
 process.trans = {};
 
-var jsonRPC = new rpc.JsonRpc(socket);
+var jsonRPC = new rpc.JsonRpc(socket, rpc.SERVER);
 jsonRPC.addMethod('ping', function() {return 'pong';});

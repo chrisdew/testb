@@ -28,6 +28,7 @@ function JsonRpc(socket, callback) {
 						{ id:data.id
 						, result: that.methods[data.method].apply(null, data.params)
 						, error: null
+						, server_time: data.server_time
 						}
 					));
 				} catch(err) {
@@ -35,6 +36,7 @@ function JsonRpc(socket, callback) {
 						{ id:data.id
 						, result: null
 						, error: err
+						, server_time: data.server_time
 						}
 					));
 				}
