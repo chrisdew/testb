@@ -3,6 +3,7 @@ var io = require('socket.io');
 var pb = require('paperboy');
 var path = require('path');
 var rpc = require('./lib/json-rpc');
+var sess = require('./lib/session');
 
 var PORT = 8888;
 var WEBROOT = path.join(path.dirname(__filename), 'www');
@@ -46,7 +47,13 @@ server.listen(PORT, HOST);
 var socket = io.listen(server);
 
 process.store = {};
+process.store.users = {};
+process.store.avatars = {};
 process.trans = {};
+process.trans.sessions = {};
 
-var jsonRPC = new rpc.JsonRpc(socket, rpc.SERVER);
-jsonRPC.addMethod('ping', function() {return 'pong';});
+var jsonRpc = new rpc.JsonRpc(socket, rpc.SERVER, function(client) {
+	var session = new sess.Session(jsonRpc, client);
+	process.trans.sessions[session.id] = session;
+});
+jsonRpc.addMethod('ping', function() {return 'pong';});
