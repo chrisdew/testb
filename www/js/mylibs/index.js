@@ -8,9 +8,9 @@ $(document).ready(function() {
 	console.log("index.js started");
     var socket = new io.Socket();
     window.socket = socket; //debugging
-    socket.connect();
+    //socket.connect();
     socket.on('connect', function() {
-    	var jsonRpc = new JsonRpc(socket, window.CLIENT);
+    	var jsonRpc = new window.JsonRpc(socket, window.CLIENT);
     	jsonRpc.addMethod("ping", function(error, result) {
     		console.log("ping invoked");
     		return "pong";
@@ -26,4 +26,15 @@ $(document).ready(function() {
     		console.log("ping response", err, result);
         });
     });
+    
+    // The viewModel is the data for KnockoutJS.
+    window.viewModel = {
+      chats: 
+      ko.observableArray([ { name: "foo", message: "bar" }
+                         , { name: "hello", message: "world" }
+                         ] )
+    };
+    console.log("bindings being applied");
+    ko.applyBindings(window.viewModel);
+    console.log("bindings applied");
 });
