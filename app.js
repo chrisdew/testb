@@ -51,17 +51,18 @@ process.store.users = {};
 process.store.avatars = {};
 process.trans = {};
 process.trans.sessions = {};
-process.trans.sessionsByClient = {};
+process.trans.sessionsByClientSessionId = {};
 
 var jsonRpc = new rpc.JsonRpc(socket, rpc.SERVER, function(client) {
 	var session = new sess.Session(jsonRpc, client);
 	process.trans.sessions[session.id] = session;
-	process.trans.sessionsByClient[client.sessionId] = session;
+	process.trans.sessionsByClientSessionId["" + client.sessionId] = session;
 });
 jsonRpc.addMethod('ping', function() {return 'pong';});
 jsonRpc.addNotificationHandler('chat', function(client, text) { 
-	console.log("client.sessionId", client.sessionId, client.toString());
-	var session = process.trans.sessionsByClient[client.sessionId];
-	//var user = session.user;
-	//jsonRpc.notifyAll('chat', {name: user.name, message: text});
+	console.log("client.sessionId", ":" + JSON.stringify(client.sessionId) + ":", client.toString());
+	var session = process.trans.sessionsByClientSessionId["" + client.sessionId];
+	//console.log("process.", process.trans.sessionsByClientSessionId);
+	var user = session.user;
+	jsonRpc.notifyAll('chat', [{name: user.name, text: text}]);
 });

@@ -1,3 +1,5 @@
+var MAX_CHATS = 6;
+
 var started = false;
 $(document).ready(function() {
 	if (started) {
@@ -20,6 +22,12 @@ $(document).ready(function() {
     		console.log("handling " + latency + "ms");
     		$('#debug span.latency').text(latency);
     	});
+    	jsonRpc.addNotificationHandler("chat", function(chat) {
+    		window.viewModel.chats.push(chat);
+    		if (window.viewModel.chats().length > MAX_CHATS) {
+    			window.viewModel.chats.shift();
+    		}
+    	});
     	
     	console.log("sending ping");
     	jsonRpc.rpc('ping', [], function(err, result) {
@@ -37,6 +45,8 @@ $(document).ready(function() {
         , sendChat
         : function() { 
         	jsonRpc.notify('chat', [window.viewModel.currentChat()]); 
+        	$("#chats > .fore input").focus();
+        	window.viewModel.currentChat("");
           }
         } ;
         console.log("bindings being applied");

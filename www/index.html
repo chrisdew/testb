@@ -45,31 +45,9 @@
   <script src="/js/mylibs/index.js" type="text/javascript"></script>
 
   <script id="chats_tmpl" type="text/x-jquery-tmpl">
-    <h1>hello</h1>
-    <div id="chats">
-      <div class="bubble back">
-        <ul>
-          {{each(i, chat) chats()}}
-            <li data-bind='template: { name: "chat_tmpl", data: chat }'></li>
-          {{/each}}
-        </ul>
-        <form>
-          <input type="text"></input>
-          <button type="submit">Submit</button>
-        </form>
-      </div>
-      <div class="bubble fore">
-        <ul>
-          {{each(i, chat) chats()}}
-            <li data-bind='template: { name: "chat_tmpl", data: chat }'></li>
-          {{/each}}
-        </ul>
-        <form data-bind="submit: sendChat">
-          <input type="text" data-bind="value: currentChat"></input>
-          <button type="submit">Submit</button>
-        </form>
-      </div>
-    </div>
+        {{each(i, chat) chats()}}
+          <li data-bind='template: { name: "chat_tmpl", data: chat }'></li>
+        {{/each}}
   </script>
   <script id="chat_tmpl" type="text/x-jquery-tmpl">
     ${ name } : ${ text }
@@ -127,7 +105,23 @@
       <p>latency: <span class="latency"></span>ms</p>
     </div>
   </div>
-  <div id="chats" data-bind="template: 'chats_tmpl'">
+  <div id="chats">
+    <div class="bubble back">
+      <ul id="chats_list" data-bind="template: 'chats_tmpl'">
+      </ul>
+      <form>
+        <input type="text"></input>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+    <div class="bubble fore">
+      <ul id="chats_list"  data-bind="template: 'chats_tmpl'">
+      </ul>
+      <form data-bind="submit: sendChat">
+        <input type="text" data-bind="value: currentChat"></input>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
   </div>
 
   <!-- Javascript at the bottom for fast page loading -->
