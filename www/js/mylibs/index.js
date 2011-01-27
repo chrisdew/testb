@@ -8,7 +8,7 @@ $(document).ready(function() {
 	console.log("index.js started");
     var socket = new io.Socket();
     window.socket = socket; //debugging
-    //socket.connect();
+    socket.connect();
     socket.on('connect', function() {
     	var jsonRpc = new window.JsonRpc(socket, window.CLIENT);
     	jsonRpc.addMethod("ping", function(error, result) {
@@ -25,16 +25,23 @@ $(document).ready(function() {
     	jsonRpc.rpc('ping', [], function(err, result) {
     		console.log("ping response", err, result);
         });
+
+    	// The viewModel is the data for KnockoutJS.
+        window.viewModel = 
+        { chats 
+        : ko.observableArray([ { name: "foo", text: "bar" }
+                             , { name: "hello", text: "world" }
+                             ] )
+        , currentChat
+        : ko.observable("")
+        , sendChat
+        : function() { 
+        	jsonRpc.notify('chat', [window.viewModel.currentChat()]); 
+          }
+        } ;
+        console.log("bindings being applied");
+        ko.applyBindings(window.viewModel);
+        console.log("bindings applied");
     });
     
-    // The viewModel is the data for KnockoutJS.
-    window.viewModel = {
-      chats: 
-      ko.observableArray([ { name: "foo", message: "bar" }
-                         , { name: "hello", message: "world" }
-                         ] )
-    };
-    console.log("bindings being applied");
-    ko.applyBindings(window.viewModel);
-    console.log("bindings applied");
 });
