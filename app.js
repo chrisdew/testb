@@ -1,3 +1,7 @@
+/*
+ * Copyright 2011, Barricane Technology Ltd.  All Rights Reserved.
+ */
+
 var http = require('http');
 var io = require('socket.io');
 var pb = require('paperboy');

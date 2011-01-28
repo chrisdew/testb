@@ -1,3 +1,7 @@
+/*
+ * Copyright 2011, Barricane Technology Ltd.  All Rights Reserved.
+ */
+
 var MAX_CHATS = 6;
 
 var started = false;
