@@ -10,13 +10,13 @@ var suite = vows.describe('lexer').addBatch(
     : { topic
       : ""
       , "test lexing"
-      : function(topic) { assert.deepEqual(lex(topic), { success: false, completions: [] }); }
+      : function(topic) { assert.deepEqual(lex(topic), { success: false, completions: [], tokens: [], pos: [] }); }
       }
     , "one char"
     : { topic
       : "f"
       , "test lexing"
-      : function(topic) { assert.deepEqual(lex(topic), { success: false, completions: ["fire", "free"] }); }
+      : function(topic) { assert.deepEqual(lex(topic), { success: false, completions: ["ire", "ree"], tokens: [], pos: [] }); }
       }
     }
 )
