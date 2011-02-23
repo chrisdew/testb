@@ -8,6 +8,8 @@ var pb = require('paperboy');
 var path = require('path');
 var rpc = require('./lib/json-rpc');
 var sess = require('./lib/session');
+var wdb = require('world-db');
+var bdb = require('barricane-db');
 
 var PORT = 8888;
 var WEBROOT = path.join(path.dirname(__filename), 'www');
